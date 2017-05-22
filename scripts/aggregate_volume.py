@@ -8,7 +8,7 @@ import math
 from datetime import datetime,timedelta
 
 file_suffix = '.csv'
-path = '../'  # set the data directory
+path = '../dataSets/training/'  # set the data directory
 
 def avgVolume(in_file):
 
@@ -54,7 +54,7 @@ def avgVolume(in_file):
         time_window_end = time_window_start + timedelta(minutes=20)
         for tollgate_id in volumes[time_window_start]:
             for direction in volumes[time_window_start][tollgate_id]:
-               out_line = ','.join(['"' + str(tollgate_id) + '"', 
+               out_line = ','.join(['"' + str(tollgate_id) + '"',
 			                     '"[' + str(time_window_start) + ',' + str(time_window_end) + ')"',
                                  '"' + str(direction) + '"',
                                  '"' + str(volumes[time_window_start][tollgate_id][direction]) + '"',
